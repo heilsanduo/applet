@@ -1,0 +1,9 @@
+<view class='num_wrap'>
+    <!-- catchtap='subtract'为减事件 -->
+  <button class='btn' catchtap='subtract' disabled='{{count<=1}}'>-</button>
+  <!-- bindinput='inputChangeHandle'为事件 -->
+  <input type='number' value='{{count}}' bindinput='inputChangeHandle'></input>
+  <!-- catchtap='add'为加事件 -->
+  <button class='btn' catchtap='add'>+</button>
+</view>
+

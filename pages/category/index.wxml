@@ -1,0 +1,31 @@
+<!-- 大容器 -->
+<view class="caregory">
+    <!-- 左边导航 -->
+    <scroll-view class="nav_left" scroll-y>
+        <block>
+            <!-- data-index为绑定的数据，后面的index可以随便写其他名字，curIndex == index 和data-index的index是一样的 -->
+            <view class="nav_left_items {{curIndex == index ? ' .nav_left_item-active' : ''}}" wx:for="{{navLeftItems}}" wx:key="*this" data-index="{{index}}" bindtap="switchRightTab">
+                {{item}}
+            </view>
+        </block>
+    </scroll-view>
+    <!-- 右边导航 -->
+    <scroll-view class="nav_right" scroll-y>
+        <viem wx:if="{navRightItems[curIndex]" style="paddind-bottom:10px;">
+            <block wx:for="{{navRightItems[curIndex]}}" wx:for-item="item" wx:key="{{index}}">
+                <view class="jd-category">
+                    <view class="title">{{item.title}}</view>
+                    <view class="jd-category-wrap">
+                        <block wx:for="{{item.desc}}" wx:for-item="list" wx:key="{{index}}">
+                        <!-- 绑定showListView事件跳转详情页 -->
+                            <viem class="jd-category-style" data-txt="{{list.text}}" bindtap='showListView' >
+                                <image class="list_img" src="{{list.img}}"></image>
+                                <text class="list_text">{{list.text}}</text>
+                            </viem>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </viem>
+    </scroll-view>
+</view>

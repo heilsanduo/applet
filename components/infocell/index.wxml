@@ -1,0 +1,6 @@
+<viem class="payWrap">
+    <text class="title">{{title}}</text>
+    <text class="desc">{{desc}}</text>
+    <!-- 为三个点绑定事件 -->
+    <text class="icon" bindtap='popViem'>...</text>
+</viem>
